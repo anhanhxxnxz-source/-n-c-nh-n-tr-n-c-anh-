@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trần Đức Anh | Portfolio sinh viên CNTT, Đại học Vinh</title>
+<meta name="description" content="Portfolio của Trần Đức Anh, sinh viên năm 2 Công nghệ thông tin, Đại học Vinh. Lập trình web Front-End, C/C++, Git/GitHub.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F9; --surface:#FFFFFF; --ink:#0F2238; --muted:#4D5F78; --line:#D3DCE8;
+  --accent:#1B4FD8; --on-accent:#FFFFFF; --mark:#FFD84D; --on-mark:#0F2238;
+  --font:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0B1524; --surface:#13223A; --ink:#E8EEF7; --muted:#9CAEC7; --line:#25395A;
+    --accent:#86A7FF; --on-accent:#0B1524;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.7 var(--font);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* Header */
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top__in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:60px;flex-wrap:wrap;padding-block:.4rem}
+.top__logo{font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:-.02em}
+.top__nav{display:flex;gap:.25rem;flex-wrap:wrap}
+.top__nav a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem;padding:.35rem .7rem;border-radius:6px}
+.top__nav a:hover{color:var(--ink);background:var(--line)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding-block:4.5rem 5rem}
+.hero__hi{margin:0 0 .5rem;color:var(--muted);font-weight:500}
+.hero__name{margin:0;font-size:clamp(2.7rem,8vw,5.2rem);line-height:1;letter-spacing:-.045em;font-weight:800}
+.hero__role{margin:1.4rem 0 0;font-size:1.2rem;font-weight:600}
+.hero__text{margin:.8rem 0 0;max-width:52ch;color:var(--muted)}
+.hero__cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;font:600 1rem var(--font);padding:.75rem 1.4rem;border-radius:8px;text-decoration:none;border:2px solid var(--accent);cursor:pointer}
+.btn--fill{background:var(--accent);color:var(--on-accent)}
+.btn--line{background:transparent;color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
+
+/* Student card */
+.card-id{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;max-width:360px;margin-inline:auto;width:100%;box-shadow:0 18px 40px -24px rgba(15,34,56,.45)}
+.card-id__head{background:var(--accent);color:var(--on-accent);padding:1rem 1.3rem;font-weight:800;letter-spacing:-.01em;display:flex;justify-content:space-between;align-items:center}
+.card-id__head small{font-weight:500;opacity:.85}
+.card-id__body{padding:1.3rem;display:grid;grid-template-columns:96px 1fr;gap:1.1rem}
+.avatar{width:96px;height:120px;border-radius:10px;background:var(--mark);color:var(--on-mark);display:grid;place-items:center;font-weight:800;font-size:1.9rem;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.card-id dl{margin:0;font-size:.88rem;line-height:1.45}
+.card-id dt{color:var(--muted);font-size:.78rem}
+.card-id dd{margin:0 0 .5rem;font-weight:600}
+.card-id__bar{height:30px;margin:0 1.3rem 1.3rem;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 11px);opacity:.8;border-radius:2px}
+
+/* Sections */
+.sec{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding-block:3.5rem;border-top:1px solid var(--line)}
+.sec h2{margin:0;font-size:1.5rem;letter-spacing:-.02em;line-height:1.2;position:sticky;top:84px;align-self:start}
+.lead{margin:0 0 1rem;max-width:62ch}
+.about p{margin:0 0 1rem;max-width:62ch}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 0;padding:0;list-style:none}
+.facts li{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.45rem .8rem;font-size:.92rem}
+
+.skills{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.3rem}
+.skill h3{margin:0;font-size:1.1rem}
+.skill__lv{display:inline-block;margin:.4rem 0 .6rem;font-size:.82rem;font-weight:600;background:var(--mark);color:var(--on-mark);padding:.1rem .6rem;border-radius:99px}
+.skill p{margin:0;color:var(--muted);font-size:.95rem}
+.learning{margin-top:1.2rem;color:var(--muted);font-size:.95rem}
+
+.projects{display:grid;gap:1.4rem}
+.proj{display:grid;grid-template-columns:260px 1fr;gap:1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.1rem}
+.thumb{border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:.72rem;background:var(--bg);min-height:150px}
+.thumb__bar{display:flex;gap:5px;padding:7px 9px;border-bottom:1px solid var(--line)}
+.thumb__bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.thumb__body{padding:.7rem .8rem;display:grid;gap:6px}
+.thumb__body span{display:block;height:8px;border-radius:4px;background:var(--line)}
+.thumb__body span:nth-child(1){width:55%;background:var(--accent)}
+.thumb__body span:nth-child(3){width:80%}
+.thumb__body span:nth-child(4){width:65%}
+.thumb pre{margin:0;padding:.8rem;font:500 .72rem/1.6 ui-monospace,Consolas,monospace;color:var(--muted);white-space:pre-wrap}
+.proj h3{margin:0 0 .4rem;font-size:1.2rem}
+.proj p{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.9rem 0 0;padding:0;list-style:none}
+.tags li{font-size:.8rem;font-weight:600;border:1px solid var(--accent);color:var(--accent);padding:.1rem .6rem;border-radius:99px}
+.links{display:flex;gap:1.2rem;margin-top:.9rem;font-weight:600;font-size:.95rem}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem}
+.contact ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.contact li span{display:block;color:var(--muted);font-size:.82rem}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.3rem;font-weight:600;font-size:.92rem}
+input,textarea{font:400 1rem var(--font);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.7rem .85rem;width:100%}
+input:focus,textarea:focus{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:1px}
+textarea{min-height:130px;resize:vertical}
+.status{min-height:1.5em;margin:0;font-size:.92rem;font-weight:500}
+.status--err{color:#C2362B}
+@media (prefers-color-scheme:dark){.status--err{color:#FF8E84}}
+
+footer{border-top:1px solid var(--line);padding-block:2rem;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{margin-right:1rem}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:2.5rem;padding-block:3rem}
+  .sec{grid-template-columns:1fr;gap:1.2rem}
+  .sec h2{position:static}
+  .proj{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="top__logo" href="#top">Trần Đức Anh</a>
+    <nav class="top__nav" aria-label="Điều hướng chính">
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <a href="#ky-nang">Kỹ năng</a>
+      <a href="#du-an">Dự án</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero" aria-labelledby="ten">
+    <div>
+      <p class="hero__hi">Xin chào, tôi là</p>
+      <h1 class="hero__name" id="ten">Trần Đức Anh</h1>
+      <p class="hero__role">Sinh viên Công nghệ thông tin, Đại học Vinh</p>
+      <p class="hero__text">Tôi đang học xây dựng giao diện web bằng HTML5, CSS3 và lập trình hướng đối tượng bằng C++. Mục tiêu của tôi là trở thành lập trình viên Front-End.</p>
+      <div class="hero__cta">
+        <a class="btn btn--fill" href="#du-an">Xem dự án</a>
+        <!-- SỬA: đặt file CV của bạn vào cùng thư mục và đặt tên cv.pdf -->
+        <a class="btn btn--line" href="cv.pdf" download>Tải CV</a>
+      </div>
+    </div>
+
+    <aside class="card-id" aria-label="Thẻ sinh viên">
+      <div class="card-id__head">Đại học Vinh <small>Sinh viên</small></div>
+      <div class="card-id__body">
+        <!-- SỬA: thay chữ ĐA bằng ảnh thật: <img src="images/avatar.jpg" alt="Ảnh chân dung Trần Đức Anh"> -->
+        <div class="avatar" role="img" aria-label="Ảnh đại diện">ĐA</div>
+        <dl>
+          <dt>Họ và tên</dt><dd>Trần Đức Anh</dd>
+          <dt>Ngành</dt><dd>Công nghệ thông tin</dd>
+          <dt>Năm học</dt><dd>Năm 2</dd>
+          <dt>Lớp học phần</dt><dd>LTW_02</dd>
+        </dl>
+      </div>
+      <div class="card-id__bar" aria-hidden="true"></div>
+    </aside>
+  </section>
+
+  <section class="wrap sec about" id="gioi-thieu" aria-labelledby="h-gt">
+    <h2 id="h-gt">Giới thiệu</h2>
+    <div>
+      <p>Tôi là Trần Đức Anh, sinh viên năm 2 ngành Công nghệ thông tin tại Đại học Vinh. Trang này là đồ án cá nhân của lớp Lập trình web LTW_02, do tôi tự viết bằng HTML và CSS.</p>
+      <p>Tôi thích biến một ý tưởng thành một trang web chạy được: chia bố cục rõ ràng, chọn màu dễ đọc và kiểm tra trên cả điện thoại. Ngoài web, tôi học C/C++ để hiểu cách chương trình tổ chức dữ liệu và xử lý bài toán.</p>
+      <ul class="facts">
+        <li>Đại học Vinh</li>
+        <li>Công nghệ thông tin, năm 2</li>
+        <li>Hướng đi: Front-End</li>
+        <li>Ngôn ngữ giao tiếp: Tiếng Việt</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="ky-nang" aria-labelledby="h-kn">
+    <h2 id="h-kn">Kỹ năng</h2>
+    <div>
+      <p class="lead">Mức độ dưới đây là đánh giá thực tế của tôi sau các bài thực hành và đồ án trên lớp.</p>
+      <div class="skills">
+        <article class="skill">
+          <h3>HTML5 và CSS3</h3>
+          <span class="skill__lv">Khá</span>
+          <p>Dựng cấu trúc trang bằng thẻ ngữ nghĩa, đặt tên lớp theo BEM, chia bố cục bằng Flexbox và Grid, giao diện hiển thị tốt trên điện thoại.</p>
+        </article>
+        <article class="skill">
+          <h3>C và C++</h3>
+          <span class="skill__lv">Khá</span>
+          <p>Lập trình hướng đối tượng, cấu trúc dữ liệu và giải thuật, đọc ghi tệp.</p>
+        </article>
+        <article class="skill">
+          <h3>Git, GitHub, VS Code</h3>
+          <span class="skill__lv">Cơ bản</span>
+          <p>Tạo repository, commit, push và đưa trang web lên GitHub Pages.</p>
+        </article>
+      </div>
+      <p class="learning">Đang học thêm: JavaScript, thiết kế giao diện responsive nâng cao.</p>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="du-an" aria-labelledby="h-da">
+    <h2 id="h-da">Dự án</h2>
+    <div class="projects">
+
+      <article class="proj">
+        <div class="thumb" role="img" aria-label="Minh họa màn hình chương trình C++ quản lý sinh viên">
+<pre>1. Thêm sinh viên
+2. Thêm giảng viên
+3. Xóa theo mã
+4. Lưu vào tệp
+&gt; _</pre>
+        </div>
+        <div>
+          <h3>Quản lý sinh viên và giảng viên</h3>
+          <p>Chương trình C++ dùng lập trình hướng đối tượng: lớp cha Người, hai lớp con Sinh viên và Giảng viên. Hỗ trợ thêm, xóa và lưu dữ liệu vào tệp.</p>
+          <ul class="tags"><li>C++</li><li>OOP</li><li>File I/O</li></ul>
+          <!-- SỬA: thay TEN-GITHUB và tên repo -->
+          <div class="links"><a href="https://github.com/TEN-GITHUB/quan-ly-sv-gv" target="_blank" rel="noopener">Mã nguồn trên GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="thumb" role="img" aria-label="Minh họa trang web giới thiệu ẩm thực ba miền">
+          <div class="thumb__bar"><i></i><i></i><i></i></div>
+          <div class="thumb__body"><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div>
+          <h3>Web giới thiệu ẩm thực ba miền</h3>
+          <p>Website nhiều trang giới thiệu món ăn Bắc, Trung, Nam. Người xem lọc món theo vùng miền, giao diện hiển thị tốt trên điện thoại và máy tính.</p>
+          <ul class="tags"><li>HTML5</li><li>CSS3</li><li>Responsive</li></ul>
+          <div class="links">
+            <a href="https://TEN-GITHUB.github.io/am-thuc-3-mien/" target="_blank" rel="noopener">Xem demo</a>
+            <a href="https://github.com/TEN-GITHUB/am-thuc-3-mien" target="_blank" rel="noopener">Mã nguồn</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="thumb" role="img" aria-label="Minh họa trang portfolio cá nhân">
+          <div class="thumb__bar"><i></i><i></i><i></i></div>
+          <div class="thumb__body"><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div>
+          <h3>Portfolio cá nhân</h3>
+          <p>Chính trang bạn đang xem: giới thiệu bản thân, kỹ năng và dự án. Hỗ trợ chế độ sáng và tối theo thiết bị, form liên hệ gửi qua email.</p>
+          <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript cơ bản</li><li>GitHub Pages</li></ul>
+          <div class="links"><a href="https://github.com/TEN-GITHUB/portfolio" target="_blank" rel="noopener">Mã nguồn</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="wrap sec" id="lien-he" aria-labelledby="h-lh">
+    <h2 id="h-lh">Liên hệ</h2>
+    <div class="contact">
+      <div>
+        <p class="lead">Bạn muốn góp ý cho trang này hoặc trao đổi về học tập, cứ nhắn cho tôi.</p>
+        <ul>
+          <!-- SỬA: đổi email, GitHub, Facebook thành thông tin của bạn -->
+          <li><span>Email</span><a href="mailto:email.cua.ban@gmail.com">email.cua.ban@gmail.com</a></li>
+          <li><span>GitHub</span><a href="https://github.com/TEN-GITHUB" target="_blank" rel="noopener">github.com/TEN-GITHUB</a></li>
+          <li><span>Facebook</span><a href="https://facebook.com/TEN-FACEBOOK" target="_blank" rel="noopener">facebook.com/TEN-FACEBOOK</a></li>
+        </ul>
+      </div>
+
+      <form id="form" novalidate>
+        <label>Họ tên
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>Email của bạn
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>Nội dung
+          <textarea name="msg" required></textarea>
+        </label>
+        <button class="btn btn--fill" type="submit">Mở email để gửi</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Trần Đức Anh. Đồ án cá nhân lớp LTW_02, Đại học Vinh.</p>
+    <p><a href="https://github.com/TEN-GITHUB" target="_blank" rel="noopener">GitHub</a><a href="#top">Lên đầu trang</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var TO = "email.cua.ban@gmail.com"; // SỬA: email nhận tin nhắn
+  var form = document.getElementById("form");
+  var status = document.getElementById("status");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var d = new FormData(form);
+    var name = (d.get("name")||"").trim(), mail = (d.get("email")||"").trim(), msg = (d.get("msg")||"").trim();
+    var ok = name && msg && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
+    status.className = "status" + (ok ? "" : " status--err");
+    if(!ok){ status.textContent = "Hãy điền đủ họ tên, email hợp lệ và nội dung."; return; }
+    var subject = "Tin nhắn từ portfolio: " + name;
+    var body = msg + "\n\nEmail người gửi: " + mail;
+    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    status.textContent = "Đã mở ứng dụng email của bạn. Bấm Gửi trong đó để hoàn tất.";
+  });
+})();
+</script>
+</body>
+</html>
